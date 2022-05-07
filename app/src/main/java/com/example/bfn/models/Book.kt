@@ -2,7 +2,7 @@ package com.example.bfn.models
 
 import com.google.gson.annotations.SerializedName
 
-data class Books (
+data class Book (
     @SerializedName("id") val id: String?="",
     @SerializedName("title") val title: String?="",
     @SerializedName("author") val author: String?="",
@@ -23,7 +23,7 @@ data class Books (
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as Books
+        other as Book
 
         if (id != other.id) return false
         if (title != other.title) return false

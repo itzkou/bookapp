@@ -5,13 +5,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bfn.databinding.ItemRecentBookBinding
-import com.example.bfn.models.Books
+import com.example.bfn.models.Book
 import com.example.bfn.util.SimpleCallback
 
 
 class RecentlyReadBooksAdapter : RecyclerView.Adapter<RecentlyReadBooksAdapter.ViewHolder>() {
 
-    private var books = listOf<Books>()
+    private var books = listOf<Book>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return RecentlyReadBooksAdapter.ViewHolder(
@@ -37,7 +37,7 @@ class RecentlyReadBooksAdapter : RecyclerView.Adapter<RecentlyReadBooksAdapter.V
     }
 
 
-    fun updateBooks(newBooks: List<Books>) {
+    fun updateBooks(newBooks: List<Book>) {
         val diffResult =
             DiffUtil.calculateDiff(SimpleCallback(this.books, newBooks) { it.id!! })
         this.books = newBooks

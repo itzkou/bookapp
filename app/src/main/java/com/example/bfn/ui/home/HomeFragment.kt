@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bfn.Adapters.BooksAdapter
 import com.example.bfn.Adapters.RecentlyReadBooksAdapter
 import com.example.bfn.databinding.FragmentHomeBinding
-import com.example.bfn.models.Books
+import com.example.bfn.models.Book
 
 class HomeFragment : Fragment() {
 
@@ -49,8 +49,8 @@ class HomeFragment : Fragment() {
                 LinearLayoutManager(requireActivity(), LinearLayoutManager.VERTICAL, false)
         }
 
-        readBooksAdapter.updateBooks(listOf<Books>(Books("1"),Books("2"),Books("2"),Books("2"),Books("2")))
-        recentlyReadBooksAdapter.updateBooks(listOf<Books>(Books("1"),Books("2"),Books("2"),Books("2"),Books("2")))
+        readBooksAdapter.updateBooks(listOf<Book>(Book("1"),Book("2"),Book("2"),Book("2"),Book("2")))
+        recentlyReadBooksAdapter.updateBooks(listOf<Book>(Book("1"),Book("2"),Book("2"),Book("2"),Book("2")))
 
     }
 }
