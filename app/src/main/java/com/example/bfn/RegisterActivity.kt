@@ -21,7 +21,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        supportActionBar?.hide()
+
 
         //Sign UP
         val firstName = findViewById<EditText>(R.id.firstName_text)

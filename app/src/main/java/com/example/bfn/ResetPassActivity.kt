@@ -10,7 +10,7 @@ class ResetPassActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reset_pass)
 
-        supportActionBar?.hide()
+
 
 
         val backBtn = findViewById<ImageButton>(R.id.back_btn)

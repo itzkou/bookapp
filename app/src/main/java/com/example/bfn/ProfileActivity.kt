@@ -44,7 +44,7 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        supportActionBar?.hide()
+
 
         val backBtn = findViewById<ImageButton>(R.id.back_btn)
         backBtn.setOnClickListener {

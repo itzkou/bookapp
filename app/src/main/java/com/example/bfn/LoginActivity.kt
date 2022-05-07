@@ -24,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        supportActionBar?.hide()
+
        // supportActionBar?.setDisplayHomeAsUpEnabled(true);
         //login
         val loginBtn = findViewById<Button>(R.id.login_login_btn)
@@ -33,8 +33,10 @@ class LoginActivity : AppCompatActivity() {
         val login_signup_btn = findViewById<Button>(R.id.login_signup_btn)
 
         loginBtn.setOnClickListener{
-
-            if(emailTXT.text.isNullOrBlank())
+            val intent = Intent(this@LoginActivity, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+            /*if(emailTXT.text.isNullOrBlank())
             {
                 emailTXT.error = getString(R.string.champ_vide)
 
@@ -133,7 +135,7 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
                 }
-            )
+            )*/
 
 
 
