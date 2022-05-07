@@ -11,11 +11,6 @@ class BlurAppBar(val context: Context) {
 
     var blurred = false
     fun blurAppBar(appBar: AppBarLayout, blurro: ConstraintLayout) {
-        Blurry.with(context)
-            .radius(6)
-            .sampling(2)
-            .async()
-            .onto(blurro as ViewGroup)
         appBar.addOnOffsetChangedListener(AppBarLayout.OnOffsetChangedListener { p0, p1 ->
             val alpha = (p0.totalScrollRange + p1).toFloat() / p0.totalScrollRange
             if ((alpha == 0f || alpha == 1f)) {
