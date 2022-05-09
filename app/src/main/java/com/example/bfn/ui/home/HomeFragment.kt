@@ -1,6 +1,7 @@
 package com.example.bfn.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,9 @@ import com.example.bfn.Adapters.RecentlyReadBooksAdapter
 import com.example.bfn.databinding.FragmentHomeBinding
 import com.example.bfn.models.Book
 import com.example.bfn.models.BooksResponse
+import com.example.bfn.models.GetUserResponse
+import com.example.bfn.models.Token
+import com.example.bfn.prefs.PrefsManager
 import com.example.bfn.util.ApiClient
 import retrofit2.Call
 import retrofit2.Callback
@@ -45,6 +49,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         getAllBooks()
+        getUser()
     }
 
 
@@ -86,6 +91,28 @@ class HomeFragment : Fragment() {
             }
 
         })
+    }
+
+    private fun getUser() {
+        val token = PrefsManager.geToken(requireActivity())
+         token?.let {
+            apiservice.getUserByToken(Token(token)).enqueue(object : Callback<GetUserResponse> {
+                override fun onResponse(
+                    call: Call<GetUserResponse>?,
+                    response: Response<GetUserResponse>
+                ) {
+                    if (response.isSuccessful){
+                        binding.tvUsername.text = "Hi" + response.body().dataid.firstName
+                    }
+                }
+
+                override fun onFailure(call: Call<GetUserResponse>?, t: Throwable?) {
+                    Toast.makeText(requireActivity(), "Network Faillure", Toast.LENGTH_SHORT).show()
+                }
+
+            })
+
+        }
     }
 
 }

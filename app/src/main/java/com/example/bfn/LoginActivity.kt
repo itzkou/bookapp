@@ -12,6 +12,7 @@ import com.example.bfn.models.LoginResponse
 import com.example.bfn.models.User
 import com.example.bfn.prefs.PrefsManager
 import com.example.bfn.util.ApiClient
+import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

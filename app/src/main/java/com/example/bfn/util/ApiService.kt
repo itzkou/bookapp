@@ -1,8 +1,6 @@
 package com.example.bfn.util
 
-import com.example.bfn.models.BooksResponse
-import com.example.bfn.models.LoginResponse
-import com.example.bfn.models.User
+import com.example.bfn.models.*
 import com.google.gson.JsonObject
 import okhttp3.MultipartBody
 import org.json.JSONObject
@@ -28,9 +26,8 @@ interface ApiService {
     @PUT("edit-profile-picture")
     fun editProfilePicture(@Part img : MultipartBody.Part, @Part("email") email:String): Call<JsonObject>
 
-    @FormUrlEncoded
     @POST("getuser")
-    fun getUserByToken(@FieldMap params: HashMap<String?, String?>): Call<JsonObject>
+    fun getUserByToken(@Body token:Token): Call<GetUserResponse>
 
     @DELETE("one/{user_id}")
     fun deleteAccount(@Path("user_id") user_id:String): Call<JsonObject>

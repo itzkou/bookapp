@@ -42,7 +42,7 @@ class MainActivity : AppCompatActivity() {
             val params = HashMap<String?, String?>()
             params["token"] = token
 
-            ApiClient.apiService.getUserByToken(params).enqueue(
+            /*ApiClient.apiService.getUserByToken(params).enqueue(
                 object : Callback<JsonObject> {
                     override fun onFailure(call: Call<JsonObject>, t: Throwable) {
 
@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
                     }
                 }
-            )
+            )*/
         }
         else{
             val intent = Intent(this@MainActivity, LoginActivity::class.java)
