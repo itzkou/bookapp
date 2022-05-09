@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.bfn.databinding.ItemRecentBookBinding
 import com.example.bfn.models.Book
 import com.example.bfn.util.SimpleCallback
+import com.squareup.picasso.Picasso
 
 
 class RecentlyReadBooksAdapter : RecyclerView.Adapter<RecentlyReadBooksAdapter.ViewHolder>() {
@@ -24,8 +25,9 @@ class RecentlyReadBooksAdapter : RecyclerView.Adapter<RecentlyReadBooksAdapter.V
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val trip = books[position]
+        val book = books[position]
         with(holder.binding) {
+            Picasso.get().load(book.coverImage?.replace("localhost","10.0.2.2")).into(imReadBook)
 
         }
 

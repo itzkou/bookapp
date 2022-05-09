@@ -8,6 +8,7 @@
     app:cardElevation="10dp">
 
     <ImageView
+        android:scaleType="centerCrop"
         android:id="@+id/imReadBook"
         android:layout_width="100dp"
         android:layout_height="140dp"

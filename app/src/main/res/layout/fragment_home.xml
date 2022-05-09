@@ -40,7 +40,7 @@
                 </ImageView>
 
                 <TextView
-                    android:id="@+id/textView"
+                    android:id="@+id/tvUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="32dp"
@@ -59,8 +59,8 @@
                     android:fontFamily="@font/sfreg"
                     android:text="Wanna read your last book?"
                     android:textColor="@android:color/white"
-                    app:layout_constraintStart_toStartOf="@+id/textView"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+                    app:layout_constraintStart_toStartOf="@+id/tvUsername"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUsername" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/imageView"
@@ -83,7 +83,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <TextView
-                    android:id="@+id/textView3"
+                    android:id="@+id/tvBookTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -95,18 +95,18 @@
                     tools:text="The  \n institute" />
 
                 <TextView
-                    android:id="@+id/textView5"
+                    android:id="@+id/tvAuteur"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/sfpro"
                     android:text="by Stephen Hawking"
                     android:textColor="@android:color/white"
-                    app:layout_constraintStart_toStartOf="@+id/textView3"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                    app:layout_constraintStart_toStartOf="@+id/tvBookTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBookTitle" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/btnContinueReading"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
@@ -117,13 +117,13 @@
                     android:text="Continue reading"
                     android:textAllCaps="false"
                     android:textSize="16sp"
-                    app:layout_constraintBottom_toTopOf="@+id/button2"
+                    app:layout_constraintBottom_toTopOf="@+id/btnAudioBook"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.82"
                     app:layout_constraintStart_toEndOf="@+id/imageView" />
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btnAudioBook"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"

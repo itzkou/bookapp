@@ -1,5 +1,7 @@
 package com.example.bfn.util
 
+import com.example.bfn.models.BooksResponse
+import com.example.bfn.models.LoginResponse
 import com.example.bfn.models.User
 import com.google.gson.JsonObject
 import okhttp3.MultipartBody
@@ -12,7 +14,7 @@ import java.util.*
 interface ApiService {
 
     @POST("login")
-    fun login(@Body post: User): Call<JsonObject>
+    fun login(@Body post: User): Call<LoginResponse>
     @POST("users")
     fun register(@Body post: User): Call<JsonObject>
     @GET("allBooks")
@@ -33,14 +35,12 @@ interface ApiService {
     @DELETE("one/{user_id}")
     fun deleteAccount(@Path("user_id") user_id:String): Call<JsonObject>
 
-  /*  @FormUrlEncoded
-    @POST("panier/get-my")
-    fun getPanier(@FieldMap params: HashMap<String?, String?>): Call<JsonObject>
+    @GET ("allBooks")
+    fun getAllBooks(): Call<BooksResponse>
 
-    @FormUrlEncoded
-    @POST("panier/add-to-cart")
-    fun addToCart(@FieldMap params: HashMap<String?, String?>): Call<JsonObject>
-*/
+
+
+
 
 
 }
