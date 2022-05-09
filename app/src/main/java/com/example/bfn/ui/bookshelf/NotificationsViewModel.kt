@@ -1,4 +1,4 @@
-package com.example.bfn.ui.notifications
+package com.example.bfn.ui.bookshelf
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

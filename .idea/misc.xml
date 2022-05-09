@@ -45,16 +45,22 @@
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/drawable/bg_inputs.xml" value="0.1975" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/drawable/btn_book.xml" value="0.212" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/drawable/btn_read.xml" value="0.1945" />
+        <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/drawable/ic_add.xml" value="0.1645" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/drawable/ic_play.xml" value="0.2275" />
+        <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/drawable/ic_search.xml" value="0.1645" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/activity_book_details.xml" value="0.2" />
+        <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/activity_book_pdf.xml" value="0.32685185185185184" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/activity_splash.xml" value="0.24010416666666667" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/activity_upload_book.xml" value="0.23854166666666668" />
+        <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/fragment_bookshelf.xml" value="0.25" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/fragment_notifications.xml" value="0.1259259259259259" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/item_book.xml" value="0.4" />
         <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/layout/item_recent_book.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/el.koutheir/AndroidStudioProjects/BookFN-Kotlin/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
       </map>
     </option>
   </component>
