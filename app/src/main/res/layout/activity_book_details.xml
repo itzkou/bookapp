@@ -78,7 +78,7 @@
                         android:fitsSystemWindows="true"
                         android:maxHeight="200dp"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/b_i_youmustknoweverything" />
+                         />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

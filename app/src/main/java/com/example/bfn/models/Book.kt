@@ -3,7 +3,7 @@ package com.example.bfn.models
 import com.google.gson.annotations.SerializedName
 
 data class Book (
-    @SerializedName("id") val id: String?="",
+    @SerializedName("_id") val id: String?="",
     @SerializedName("title") val title: String?="",
     @SerializedName("author") val author: String?="",
     @SerializedName("price") val price: String?="",

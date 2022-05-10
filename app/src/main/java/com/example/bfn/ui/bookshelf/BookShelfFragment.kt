@@ -1,5 +1,6 @@
 package com.example.bfn.ui.bookshelf
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.bfn.Adapters.BooksAdapter
 import com.example.bfn.Adapters.RecentlyReadBooksAdapter
+import com.example.bfn.BookDetails
 import com.example.bfn.R
 import com.example.bfn.databinding.FragmentBookshelfBinding
 import com.example.bfn.databinding.FragmentHomeBinding
@@ -39,7 +41,6 @@ class BookShelfFragment : Fragment() {
         notificationsViewModel =
             ViewModelProviders.of(this).get(NotificationsViewModel::class.java)
         _binding = FragmentBookshelfBinding.inflate(inflater, container, false)
-
         binding.rvBookShelf.apply {
             layoutManager = GridLayoutManager(requireActivity(),3)
             adapter = mAdapter
@@ -57,7 +58,11 @@ class BookShelfFragment : Fragment() {
             ) {
                 if (response.isSuccessful) {
                     mAdapter.updateBooks(response.body().response)
+                    mAdapter.openBook {
+                       // Toast.makeText(requireActivity(),it,Toast.LENGTH_SHORT).show()
+                        BookDetails.start(requireActivity(),it)
 
+                    }
 
                 }
             }

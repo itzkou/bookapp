@@ -11,9 +11,12 @@ import com.squareup.picasso.Picasso
 
 
 class RecentlyReadBooksAdapter : RecyclerView.Adapter<RecentlyReadBooksAdapter.ViewHolder>() {
+    private var bookListener: ((String) -> Unit)? = null
 
     private var books = listOf<Book>()
-
+    fun openBook(callback: ((String) -> Unit)) {
+        this.bookListener = callback
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return RecentlyReadBooksAdapter.ViewHolder(
             ItemRecentBookBinding.inflate(
@@ -28,7 +31,11 @@ class RecentlyReadBooksAdapter : RecyclerView.Adapter<RecentlyReadBooksAdapter.V
         val book = books[position]
         with(holder.binding) {
             Picasso.get().load(book.coverImage?.replace("localhost","10.0.2.2")).into(imReadBook)
-
+            imReadBook.setOnClickListener {
+                bookListener?.let { callback ->
+                    callback(book.id!!)
+                }
+            }
         }
 
     }

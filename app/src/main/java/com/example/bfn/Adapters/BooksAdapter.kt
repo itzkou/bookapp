@@ -13,6 +13,11 @@ import com.squareup.picasso.Picasso
 class BooksAdapter : RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
 
     private var books = listOf<Book>()
+    private var bookListener: ((String) -> Unit)? = null
+
+    fun openBook(callback: ((String) -> Unit)) {
+        this.bookListener = callback
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return BooksAdapter.ViewHolder(
@@ -29,7 +34,13 @@ class BooksAdapter : RecyclerView.Adapter<BooksAdapter.ViewHolder>() {
         with(holder.binding) {
             tvAuthor.text = book.author
             tvTitle.text = book.title
-            Picasso.get().load(book.coverImage?.replace("localhost","10.0.2.2")).into(imCover)
+            Picasso.get().load(book.coverImage?.replace("localhost", "10.0.2.2")).into(imCover)
+
+            imCover.setOnClickListener {
+                bookListener?.let { callback ->
+                    callback(book.id!!)
+                }
+            }
         }
 
     }

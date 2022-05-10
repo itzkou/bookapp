@@ -13,8 +13,10 @@ interface ApiService {
 
     @POST("login")
     fun login(@Body post: User): Call<LoginResponse>
+
     @POST("users")
     fun register(@Body post: User): Call<JsonObject>
+
     @GET("allBooks")
     fun getBooksHome(): Call<JsonObject>
 
@@ -24,20 +26,22 @@ interface ApiService {
 
     @Multipart
     @PUT("edit-profile-picture")
-    fun editProfilePicture(@Part img : MultipartBody.Part, @Part("email") email:String): Call<JsonObject>
+    fun editProfilePicture(
+        @Part img: MultipartBody.Part,
+        @Part("email") email: String
+    ): Call<JsonObject>
 
     @POST("getuserbyid")
     fun getUserById(@Body user_id: UserX): Call<GetUserResponse>
 
     @DELETE("one/{user_id}")
-    fun deleteAccount(@Path("user_id") user_id:String): Call<JsonObject>
+    fun deleteAccount(@Path("user_id") user_id: String): Call<JsonObject>
 
-    @GET ("allBooks")
+    @GET("allBooks")
     fun getAllBooks(): Call<BooksResponse>
 
-
-
-
+    @POST("showbook")
+    fun showBook(@Body bookid: BookId): Call<BookResponse>
 
 
 }
