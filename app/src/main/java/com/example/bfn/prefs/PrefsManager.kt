@@ -8,6 +8,8 @@ class PrefsManager {
 
     companion object {
         const val TOKEN = "token"
+        const val PDF = "pdf_url"
+
         fun getPreferences(context: Context): SharedPreferences {
             return PreferenceManager.getDefaultSharedPreferences(context)
         }
@@ -20,7 +22,16 @@ class PrefsManager {
 
         fun geToken(context: Context): String? {
             return getPreferences(context).getString(TOKEN, null)
+        }
 
+        fun sePdf(context: Context, token: String?) {
+            val editor = getPreferences(context).edit()
+            editor.putString(PDF, token)
+            editor.apply()
+        }
+
+        fun gePdf(context: Context): String? {
+            return getPreferences(context).getString(PDF, null)
 
         }
     }

@@ -71,6 +71,9 @@ class BookDetails : AppCompatActivity() {
                         binding.tvPage.text = book.description
                         binding.tvTitile.text = book.title
                         binding.tvAuthor.text = book.author.toString()
+                        binding.btnRead.setOnClickListener {
+                            BookPdfActivity.start(this@BookDetails,book.filePDF)
+                        }
 
 
 

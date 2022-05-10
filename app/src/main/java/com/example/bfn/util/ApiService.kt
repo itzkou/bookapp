@@ -3,6 +3,7 @@ package com.example.bfn.util
 import com.example.bfn.models.*
 import com.google.gson.JsonObject
 import okhttp3.MultipartBody
+import okhttp3.ResponseBody
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Response
@@ -42,6 +43,10 @@ interface ApiService {
 
     @POST("showbook")
     fun showBook(@Body bookid: BookId): Call<BookResponse>
+
+
+    @GET
+    fun getPdf(@Url pdfName: String): Call<ResponseBody>
 
 
 }
