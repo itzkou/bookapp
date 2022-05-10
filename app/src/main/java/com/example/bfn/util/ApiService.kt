@@ -26,8 +26,8 @@ interface ApiService {
     @PUT("edit-profile-picture")
     fun editProfilePicture(@Part img : MultipartBody.Part, @Part("email") email:String): Call<JsonObject>
 
-    @POST("getuser")
-    fun getUserByToken(@Body token:Token): Call<GetUserResponse>
+    @POST("getuserbyid")
+    fun getUserById(@Body user_id: UserX): Call<GetUserResponse>
 
     @DELETE("one/{user_id}")
     fun deleteAccount(@Path("user_id") user_id:String): Call<JsonObject>

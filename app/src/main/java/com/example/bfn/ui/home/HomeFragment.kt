@@ -1,7 +1,6 @@
 package com.example.bfn.ui.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,10 +11,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bfn.Adapters.BooksAdapter
 import com.example.bfn.Adapters.RecentlyReadBooksAdapter
 import com.example.bfn.databinding.FragmentHomeBinding
-import com.example.bfn.models.Book
 import com.example.bfn.models.BooksResponse
 import com.example.bfn.models.GetUserResponse
 import com.example.bfn.models.Token
+import com.example.bfn.models.UserX
 import com.example.bfn.prefs.PrefsManager
 import com.example.bfn.util.ApiClient
 import retrofit2.Call
@@ -96,13 +95,13 @@ class HomeFragment : Fragment() {
     private fun getUser() {
         val token = PrefsManager.geToken(requireActivity())
          token?.let {
-            apiservice.getUserByToken(Token(token)).enqueue(object : Callback<GetUserResponse> {
+            apiservice.getUserById(UserX(token)).enqueue(object : Callback<GetUserResponse> {
                 override fun onResponse(
                     call: Call<GetUserResponse>?,
                     response: Response<GetUserResponse>
                 ) {
                     if (response.isSuccessful){
-                        binding.tvUsername.text = "Hi" + response.body().dataid.firstName
+                        binding.tvUsername.text = "Hi " + response.body().dataid.firstName +" !"
                     }
                 }
 

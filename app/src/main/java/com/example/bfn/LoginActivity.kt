@@ -60,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
                             val content = response.body()
 
                             if (response.code() == 200) {
-                                val token = response.body().message.token
+                                val token = response.body().message._id
                                 PrefsManager.seToken(this@LoginActivity, token = token)
                                 val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                                 startActivity(intent)
