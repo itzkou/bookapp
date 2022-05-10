@@ -10,12 +10,8 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bfn.databinding.ActivityBookPdfBinding
 import com.example.bfn.util.ApiClient
-import okhttp3.Callback
 import okhttp3.ResponseBody
-import retrofit2.Call
-import retrofit2.Response
-import java.io.FileOutputStream
-import java.io.InputStream
+import java.io.*
 
 class BookPdfActivity : AppCompatActivity() {
     private lateinit var binding: ActivityBookPdfBinding
@@ -75,30 +71,6 @@ class BookPdfActivity : AppCompatActivity() {
 
     }
 
-    fun saveFile(body: ResponseBody?, pathWhereYouWantToSaveFile: String): String {
-        if (body == null)
-            return ""
-        var input: InputStream? = null
-        try {
-            input = body.byteStream()
-            //val file = File(getCacheDir(), "cacheFileAppeal.srl")
-            val fos = FileOutputStream(pathWhereYouWantToSaveFile)
-            fos.use { output ->
-                val buffer = ByteArray(4 * 1024) // or other buffer size
-                var read: Int
-                while (input.read(buffer).also { read = it } != -1) {
-                    output.write(buffer, 0, read)
-                }
-                output.flush()
-            }
-            return pathWhereYouWantToSaveFile
-        } catch (e: Exception) {
-            Log.e("saveFile", e.toString())
-        } finally {
-            input?.close()
-        }
-        return ""
-    }
 
     companion object {
         private const val BOOK_PDF = "BOOK_PDF"

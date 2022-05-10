@@ -16,6 +16,7 @@ import com.example.bfn.Adapters.BooksAdapter
 import com.example.bfn.Adapters.RecentlyReadBooksAdapter
 import com.example.bfn.BookDetails
 import com.example.bfn.R
+import com.example.bfn.UploadBook
 import com.example.bfn.databinding.FragmentBookshelfBinding
 import com.example.bfn.databinding.FragmentHomeBinding
 import com.example.bfn.models.BooksResponse
@@ -44,6 +45,10 @@ class BookShelfFragment : Fragment() {
         binding.rvBookShelf.apply {
             layoutManager = GridLayoutManager(requireActivity(),3)
             adapter = mAdapter
+        }
+
+        binding.imAddBook.setOnClickListener {
+            startActivity(Intent(requireActivity(),UploadBook::class.java))
         }
 
         return binding.root
