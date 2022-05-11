@@ -32,11 +32,14 @@
 
     </style>
 
+
+
     <style name="edit_book">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:layout_marginEnd">20dp</item>
         <item name="android:layout_marginStart">20dp</item>
+        <item name="android:paddingStart">10dp</item>
         <item name="fontFamily">@font/sfreg</item>
         <item name="android:textSize">14sp</item>
 
