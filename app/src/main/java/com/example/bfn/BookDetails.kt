@@ -72,7 +72,7 @@ class BookDetails : AppCompatActivity() {
                         binding.tvTitile.text = book.title
                         binding.tvAuthor.text = book.author.toString()
                         binding.btnRead.setOnClickListener {
-                            BookPdfActivity.start(this@BookDetails,book.filePDF)
+                            BookPdfActivity.start(this@BookDetails,book.filePDF.replace("localhost","10.0.2.2"))
                         }
 
 
